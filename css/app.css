@@ -33,10 +33,6 @@ h1 {
     font-weight: 300;
 }
 
-/*
- * Styles for the deck of cards
- */
-
 .deck {
     width: 660px;
     min-height: 680px;
@@ -81,10 +77,6 @@ h1 {
     font-size: 33px;
 }
 
-/*
- * Styles for the Score Panel
- */
-
 .score-panel {
     text-align: left;
     width: 345px;
@@ -106,4 +98,59 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+/* popup window when game is finished */
+.modal_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.438);
+}
+
+.modal_body {
+    position: relative;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    transform: translate(-50%, -70%);
+}
+
+.modal_heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid gray;
+}
+
+.modal_close {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.modal_stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid gray;
+}
+
+ .modal_buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 10rem;
+}
+
+.modal_button {
+    width: 70px;
+    height: 40px;
+    margin-left: 21%;
+}
+
+.hide {
+    display: none;
 }
