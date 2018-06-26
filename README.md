@@ -4,6 +4,7 @@
 
 * [Instructions](#instructions)
 * [Contributing](#contributing)
+* [Dependencies](#dependencies)
 * [Other](#other)
 
 ## Instructions
@@ -15,6 +16,10 @@ Start the game by clicking on any card. That will start the timer. The goal of t
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Dependencies
+
+This application is dependant upon Google Fonts as well as Bootstrap.
 
 ## Other
 
