@@ -93,14 +93,14 @@ function displayTime() {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
     console.log(clock);
-    clock.innerHTML = minutes, seconds;  // can put <minutes, seconds> here to use those const's.  I had 'time' in here before
+    clock.innerHTML = minutes, seconds;
 if (seconds < 10) {
     clock.innerHTML = `${minutes}:0${seconds}`;
 } else {
     clock.innerHTML = `${minutes}:${seconds}`;
     }
 }
-//  moves functionality
+//  in-game moves counter
 function addMove() {
     moves++;
     const movesText = document.querySelector('.moves');
@@ -119,7 +119,6 @@ function removeStar() {
             star.style.display = 'none';
             break;
         }
-
     }
 }
 // Toggle for popup when game is finished
@@ -135,7 +134,7 @@ function toggleModal() {
      const starsStat = document.querySelector('.modal_stars');
      const stars = getStars();
      timeStat.innerHTML = `time = ${clockTime}`;
-     movesStat.innerHTML = `moves = ${moves}`;
+     movesStat.innerHTML = `moves = ${moves + 1}`;
      starsStat.innerHTML = `Stars = ${stars}`;
  }
 
@@ -166,22 +165,21 @@ document.querySelector('.modal_replay').addEventListener('click', () => {
 });
 // reset button
 document.querySelector('.restart').addEventListener('click', () => {
+    matched = 0;     // resets match counter when reset button is clicked
     resetGame();
     toggleModal();
-    resetCards();
 });
 // reset button
 document.querySelector('.modal_replay').addEventListener('click', replayGame);
 toggleModal();
+
 function resetMoves() {
     moves = 0;
     document.querySelector('.moves').innerHTML = moves;
 }
 
 function resetStars() {
-     stars = 0;
-    const starList = document.querySelectorAll('.stars li');
-    for (star of starList) {
+    for (star of stars) {
         star.style.display = 'inline'
     }
 }
@@ -191,10 +189,6 @@ function gameOver() {
     writeModalStats();
     toggleModal();
 }
-
-if (matched === total_pairs) {
-    gameOver();
- }
 // reset game function
  function resetGame() {
    resetClockAndTime();
@@ -213,9 +207,9 @@ function resetClockAndTime() {
 }
 
 function replayGame() {
+    matched = 0;     // added matched here trying to get the counter to reset
     resetGame();
     toggleModal();
-    resetCards();
 }
 
  function resetCards() {
